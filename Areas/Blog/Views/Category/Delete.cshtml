@@ -1,0 +1,25 @@
+@model AppMvc.Models.Blog.Category
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Xóa chuyên mục </h1>
+
+<h3>Bạn có chắc chắn xóa?</h3>
+<div>
+    <dl class="row">
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => Model.Title)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Danh sách chuyên mục Blog</a>
+    </form>
+</div>
