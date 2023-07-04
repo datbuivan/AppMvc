@@ -3,24 +3,27 @@ using AppMvc.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using App.Data;
+using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<AppDbContext>(options => {
+builder.Services.AddDbContext<AppDbContext>(options =>
+{
     options.UseSqlServer(builder.Configuration.GetConnectionString("AppMvcConnectstring"));
 });
 builder.Services.AddOptions();
 var mailsetting = builder.Configuration.GetSection("MailSettings");
 builder.Services.Configure<MailSettings>(mailsetting);
 builder.Services.AddSingleton<IEmailSender, SendMailService>();
-builder.Services.AddIdentity<AppUser,IdentityRole>()
+builder.Services.AddIdentity<AppUser, IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
 
 // Truy cập IdentityOptions
-builder.Services.Configure<IdentityOptions>(options => {
+builder.Services.Configure<IdentityOptions>(options =>
+{
     // Thiết lập về Password
     options.Password.RequireDigit = false; // Không bắt phải có số
     options.Password.RequireLowercase = false; // Không bắt phải có chữ thường
@@ -47,7 +50,8 @@ builder.Services.Configure<IdentityOptions>(options => {
 });
 
 // Cấu hình Cookie
-builder.Services.ConfigureApplicationCookie(options => {
+builder.Services.ConfigureApplicationCookie(options =>
+{
     // options.Cookie.HttpOnly = true;  
     options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
     options.LoginPath = $"/login/";                                 // Url đến trang đăng nhập
@@ -61,14 +65,16 @@ builder.Services.Configure<SecurityStampValidatorOptions>(options =>
     options.ValidationInterval = TimeSpan.FromSeconds(5);
 });
 builder.Services.AddAuthentication()
-                    .AddGoogle(options => {
+                    .AddGoogle(options =>
+                    {
                         var gconfig = builder.Configuration.GetSection("Authentication:Google");
                         options.ClientId = gconfig["ClientId"];
                         options.ClientSecret = gconfig["ClientSecret"];
                         // https ://localhost:7191/signin-google
                         options.CallbackPath = "/dang-nhap-tu-google";
                     })
-                    .AddFacebook(options => {
+                    .AddFacebook(options =>
+                    {
                         var fconfig = builder.Configuration.GetSection("Authentication:Facebook");
                         options.AppId = fconfig["AppId"];
                         options.AppSecret = fconfig["AppSecret"];
@@ -77,17 +83,21 @@ builder.Services.AddAuthentication()
                     // .AddTwitter()
                     // .AddMicrosoftAccount()
                     ;
-builder.Services.AddAuthorization(options => {
-                    options.AddPolicy("ViewManageMenu", builder => {
-                        builder.RequireAuthenticatedUser();
-                        builder.RequireRole(RoleName.Administrator);
-                    });
-                });
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("ViewManageMenu", builder =>
+    {
+        builder.RequireAuthenticatedUser();
+        builder.RequireRole(RoleName.Administrator);
+    });
+});
 
 builder.Services.AddSingleton<IdentityErrorDescriber, AppIdentityErrorDescriber>();
 
-builder.Services.AddAuthorization(options => {
-    options.AddPolicy("ViewManageMenu", builder => {
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("ViewManageMenu", builder =>
+    {
         builder.RequireAuthenticatedUser();
         builder.RequireRole(RoleName.Administrator);
     });
@@ -105,7 +115,13 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
+app.UseStaticFiles(new StaticFileOptions()
+{
+    FileProvider = new PhysicalFileProvider(
+                  Path.Combine(Directory.GetCurrentDirectory(), "Uploads")
+              ),
+    RequestPath = "/contents"
+});
 app.UseRouting();
 app.UseAuthentication(); // xac thuc danh tinh
 app.UseAuthorization(); // xac thuc quyen truy cap

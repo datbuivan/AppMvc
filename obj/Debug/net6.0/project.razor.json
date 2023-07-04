@@ -18454,6 +18454,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\Laptrinh\\AppMvc\\AppMvc\\Areas\\Files\\Views\\Shared\\_LayoutFileManager.cshtml",
+      "TargetPath": "Areas\\Files\\Views\\Shared\\_LayoutFileManager.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\Laptrinh\\AppMvc\\AppMvc\\Areas\\Identity\\Views\\Account\\AccessDenied.cshtml",
       "TargetPath": "Areas\\Identity\\Views\\Account\\AccessDenied.cshtml",
       "FileKind": "mvc"
@@ -18496,6 +18501,11 @@
     {
       "FilePath": "d:\\Laptrinh\\AppMvc\\AppMvc\\Views\\Shared\\_Summernote.cshtml",
       "TargetPath": "Views\\Shared\\_Summernote.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Laptrinh\\AppMvc\\AppMvc\\Areas\\Files\\Views\\FileManager\\Index.cshtml",
+      "TargetPath": "Areas\\Files\\Views\\FileManager\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -18596,6 +18606,16 @@
     {
       "FilePath": "d:\\Laptrinh\\AppMvc\\AppMvc\\Areas\\Database\\Views\\DbManage\\DeleteDb.cshtml",
       "TargetPath": "Areas\\Database\\Views\\DbManage\\DeleteDb.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Laptrinh\\AppMvc\\AppMvc\\Areas\\Files\\Views\\_ViewStart.cshtml",
+      "TargetPath": "Areas\\Files\\Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Laptrinh\\AppMvc\\AppMvc\\Areas\\Files\\Views\\_ViewImports.cshtml",
+      "TargetPath": "Areas\\Files\\Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
     },
     {
