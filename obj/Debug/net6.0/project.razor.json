@@ -18494,6 +18494,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\Laptrinh\\AppMvc\\AppMvc\\Views\\Shared\\_Summernote.cshtml",
+      "TargetPath": "Views\\Shared\\_Summernote.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\Laptrinh\\AppMvc\\AppMvc\\Areas\\Identity\\Views\\Account\\SendCode.cshtml",
       "TargetPath": "Areas\\Identity\\Views\\Account\\SendCode.cshtml",
       "FileKind": "mvc"
