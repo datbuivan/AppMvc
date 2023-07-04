@@ -570,3 +570,4 @@ D:\Laptrinh\AppMvc\AppMvc\obj\Debug\net6.0\refint\AppMvc.dll
 D:\Laptrinh\AppMvc\AppMvc\obj\Debug\net6.0\AppMvc.pdb
 D:\Laptrinh\AppMvc\AppMvc\obj\Debug\net6.0\AppMvc.genruntimeconfig.cache
 D:\Laptrinh\AppMvc\AppMvc\obj\Debug\net6.0\ref\AppMvc.dll
+D:\Laptrinh\AppMvc\AppMvc\bin\Debug\net6.0\Bogus.dll
