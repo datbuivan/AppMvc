@@ -17,6 +17,10 @@
     {
       "library": "elfinder@2.1.62",
       "destination": "wwwroot/lib/elfinder"
-    }
+    },
+    {
+    "library": "jquery@3.3.1",
+      "destination": "wwwroot/lib/jquery/"
+     } 
   ]
 }

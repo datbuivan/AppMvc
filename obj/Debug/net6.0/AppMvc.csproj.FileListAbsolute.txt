@@ -572,3 +572,5 @@ D:\Laptrinh\AppMvc\AppMvc\obj\Debug\net6.0\AppMvc.genruntimeconfig.cache
 D:\Laptrinh\AppMvc\AppMvc\obj\Debug\net6.0\ref\AppMvc.dll
 D:\Laptrinh\AppMvc\AppMvc\bin\Debug\net6.0\Bogus.dll
 D:\Laptrinh\AppMvc\AppMvc\bin\Debug\net6.0\elFinder.NetCore.dll
+D:\Laptrinh\AppMvc\AppMvc\bin\Debug\net6.0\package-lock.json
+D:\Laptrinh\AppMvc\AppMvc\bin\Debug\net6.0\package.json

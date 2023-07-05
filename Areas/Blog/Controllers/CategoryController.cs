@@ -10,7 +10,7 @@ using App.Data;
 using Microsoft.AspNetCore.Authorization;
 using AppMvc.Models.Blog;
 
-namespace AppMvc.Areas_Blog_Controllers_
+namespace AppMvc.Areas_Blog_Controllers
 {
     [Authorize(Roles = RoleName.Administrator)]
     [Area("Blog")]

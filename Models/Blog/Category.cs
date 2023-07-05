@@ -31,7 +31,7 @@ namespace AppMvc.Models.Blog
         public string? Slug { set; get; }
 
         // Các Category con
-        public ICollection<Category>? CategoryChildren { get; set; }
+        public ICollection<Category> CategoryChildren { get; set; }
 
         [ForeignKey("ParentCategoryId")]
         [Display(Name = "Danh mục cha")]
@@ -41,5 +41,31 @@ namespace AppMvc.Models.Blog
         // Category cha (FKey)
         [Display(Name = "Danh mục cha")]
         public int? ParentCategoryId { get; set; }
+
+        public void ChildCategoryIDs(ICollection<Category> childcates, List<int> lists)
+        {
+            if (childcates == null)
+                childcates = this.CategoryChildren;
+
+            foreach (Category category in childcates)
+            {
+                lists.Add(category.Id);
+                ChildCategoryIDs(category.CategoryChildren, lists);
+
+            }
+        }
+        public List<Category> ListParents()
+        {
+            List<Category> li = new List<Category>();
+            var parent = this.ParentCategory;
+            while (parent != null)
+            {
+                li.Add(parent);
+                parent = parent.ParentCategory;
+
+            }
+            li.Reverse();
+            return li;
+        }
     }
 }
