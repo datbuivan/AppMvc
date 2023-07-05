@@ -6,7 +6,11 @@ using App.Data;
 using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Services.AddDistributedMemoryCache();           // Đăng ký dịch vụ lưu cache trong bộ nhớ (Session sẽ sử dụng nó)
+builder.Services.AddSession(cfg => {                    // Đăng ký dịch vụ Session
+    cfg.Cookie.Name = "buivandat";             // Đặt tên Session - tên này sử dụng ở Browser (Cookie)
+    cfg.IdleTimeout = new TimeSpan(0,30, 0);    // Thời gian tồn tại của Session
+});
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppDbContext>(options =>
@@ -79,10 +83,10 @@ builder.Services.AddAuthentication()
                         options.AppId = fconfig["AppId"];
                         options.AppSecret = fconfig["AppSecret"];
                         options.CallbackPath = "/dang-nhap-tu-facebook";
-                    })
+                    });
                     // .AddTwitter()
                     // .AddMicrosoftAccount()
-                    ;
+                    
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("ViewManageMenu", builder =>
@@ -91,6 +95,8 @@ builder.Services.AddAuthorization(options =>
         builder.RequireRole(RoleName.Administrator);
     });
 });
+builder.Services.AddTransient<CartService>();
+
 
 builder.Services.AddSingleton<IdentityErrorDescriber, AppIdentityErrorDescriber>();
 
@@ -122,6 +128,7 @@ app.UseStaticFiles(new StaticFileOptions()
               ),
     RequestPath = "/contents"
 });
+app.UseSession();
 app.UseRouting();
 app.UseAuthentication(); // xac thuc danh tinh
 app.UseAuthorization(); // xac thuc quyen truy cap

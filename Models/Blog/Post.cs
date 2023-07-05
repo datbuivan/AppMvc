@@ -28,14 +28,14 @@ namespace AppMvc.Models.Blog
         [Display(Name = "Xuất bản")]
         public bool Published { set; get; }
 
-        public List<PostCategory>? PostCategories { get; set; }
+        public List<PostCategory> PostCategories { get; set; }
 
         // [Required]
         [Display(Name = "Tác giả")]
-        public string? AuthorId { set; get; }
+        public string AuthorId { set; get; }
         [ForeignKey("AuthorId")]
         [Display(Name = "Tác giả")]
-        public AppUser? Author { set; get; }
+        public AppUser Author { set; get; }
 
 
 
