@@ -300,8 +300,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvZHVjdFxWaWV3c1xDYXRlZ29yeVByb2R1Y3RcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Laptrinh/AppMvc/AppMvc/Areas/Product/Views/CategoryProduct/Detail.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvZHVjdFxWaWV3c1xDYXRlZ29yeVByb2R1Y3RcRGV0YWlsLmNzaHRtbA==
+[D:/Laptrinh/AppMvc/AppMvc/Areas/Product/Views/CategoryProduct/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvZHVjdFxWaWV3c1xDYXRlZ29yeVByb2R1Y3RcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Laptrinh/AppMvc/AppMvc/Areas/Product/Views/CategoryProduct/Edit.cshtml]
@@ -320,8 +320,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvZHVjdFxWaWV3c1xQcm9kdWN0TWFuYWdlXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Laptrinh/AppMvc/AppMvc/Areas/Product/Views/ProductManage/Detail.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvZHVjdFxWaWV3c1xQcm9kdWN0TWFuYWdlXERldGFpbC5jc2h0bWw=
+[D:/Laptrinh/AppMvc/AppMvc/Areas/Product/Views/ProductManage/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvZHVjdFxWaWV3c1xQcm9kdWN0TWFuYWdlXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Laptrinh/AppMvc/AppMvc/Areas/Product/Views/ProductManage/Edit.cshtml]
