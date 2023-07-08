@@ -1,7 +1,10 @@
 @model AppMvc.Areas.Blog.Models.CreatPostModel
+@using App.Menu
+@inject AdminSidebarService _AdminSidebarService
 @{
     ViewData["Title"] = "Thêm bài viết Blog";
     var list = ViewData["categories"] as MultiSelectList;
+    Layout="~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
 <h1>@ViewData["Title"]</h1>
@@ -74,3 +77,11 @@
     var summernote  = new AppMvc.Models.Summernote("#Content");
 }
 <partial name="_Summernote" model="summernote"/>
+
+@{
+    _AdminSidebarService.SetActive("Post","Index", "Blog");
+}
+@section Sidebar
+{
+    @Html.Raw(_AdminSidebarService.renderHtml())
+}

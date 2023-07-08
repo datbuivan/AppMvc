@@ -1,7 +1,9 @@
 @model IEnumerable<AppMvc.Models.Blog.Category>
-
+@using App.Menu
+@inject AdminSidebarService _AdminSidebarService
 @{
     ViewData["Title"] = "Index";
+    Layout="~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
 <h1>Index</h1>
@@ -67,4 +69,11 @@
             }
         }  
     }
+}
+@{
+    _AdminSidebarService.SetActive("Category","Index", "Blog");
+}
+@section Sidebar
+{
+    @Html.Raw(_AdminSidebarService.renderHtml())
 }
